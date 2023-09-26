@@ -154,17 +154,30 @@ disp(x_add_out);
 disp(nout);
 
 figure
+subplot(3,1,1);
 stem(nout, x1_out);
-hold on;
-stem(nout, x2_out);
-hold on;
-stem(nout, x_add_out);
 
-title ('MulSeq'); % Figure title
+title ('x1'); 
 xlabel ('TimeIndex n ');
 ylabel ('Amplitude');
 grid on;
-legend('x1', 'x2', 'x1 .* x2')
+
+subplot(3,1,2);
+stem(nout, x2_out);
+
+title ('x2'); 
+xlabel ('TimeIndex n ');
+ylabel ('Amplitude');
+grid on;
+
+subplot(3,1,3);
+stem(nout, x_add_out);
+
+title ('x1 .* x2'); 
+xlabel ('TimeIndex n ');
+ylabel ('Amplitude');
+grid on;
+
 
 if(iscolumn(x1))
     y = y';

@@ -91,17 +91,26 @@ stem(t3, y3);
 ylim([-1 1]);
 
 
-[x_y1,x_y1_t] = AddSeq(x ,t0, y1, t1);
-[x_y1_y2,x_y1_y2_t] = AddSeq(x_y1 ,x_y1_t, y2, t2);
-AddSeq(x_y1_y2 ,x_y1_y2_t, y3, t3);
+AddSeq(x ,t0, y1, t1);
+sgtitle("Lab1Fig8 x + y1");
+AddSeq(x ,t0, y2, t2);
+sgtitle("Lab1Fig9 x + y2");
+AddSeq(x ,t0, y3, t3);
+sgtitle("Lab1Fig10 x + y3");
 
-[x_y1,x_y1_t] = MulSeq(x ,t0, y1, t1);
-[x_y1_y2,x_y1_y2_t] = MulSeq(x_y1 ,x_y1_t, y2, t2);
-MulSeq(x_y1_y2 ,x_y1_y2_t, y3, t3);
+MulSeq(x ,t0, y1, t1);
+sgtitle("Lab1Fig11 x .* y1");
+MulSeq(x ,t0, y2, t2);
+sgtitle("Lab1Fig12 x .* y2");
+MulSeq(x ,t0, y3, t3);
+sgtitle("Lab1Fig13 x .* y3");
 
-[x_y1,x_y1_t] = ConvSeq(x ,t0, y1, t1);
-[x_y1_y2,x_y1_y2_t] = ConvSeq(x_y1 ,x_y1_t, y2, t2);
-ConvSeq(x_y1_y2 ,x_y1_y2_t, y3, t3);
+ConvSeq(x ,t0, y1, t1);
+sgtitle("Lab1Fig14 x * y1");
+ConvSeq(x ,t0, y2, t2);
+sgtitle("Lab1Fig15 x * y2");
+ConvSeq(x ,t0, y3, t3);
+sgtitle("Lab1Fig16 x * y3");
 
 
 

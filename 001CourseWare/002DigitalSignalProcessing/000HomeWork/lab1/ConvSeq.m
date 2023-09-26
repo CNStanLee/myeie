@@ -157,17 +157,28 @@ disp(x_add_out);
 disp(nout);
 
 figure
-stem(nout, x1_out);
-hold on;
-stem(nout, x2_out);
-hold on;
-stem(nout2, x_add_out);
+subplot(3,1,1);
 
-title ('ConvSeq'); % Figure title
+plot(nout, x1_out);
+title ('x1'); 
 xlabel ('TimeIndex n ');
 ylabel ('Amplitude');
 grid on;
-legend('x1', 'x2', 'conv(x1 x2)')
+
+
+subplot(3,1,2);
+plot(nout, x2_out);
+title ('x2'); 
+xlabel ('TimeIndex n ');
+ylabel ('Amplitude');
+grid on;
+
+subplot(3,1,3);
+plot(nout2, x_add_out);
+title ('x1 * x2'); 
+xlabel ('TimeIndex n ');
+ylabel ('Amplitude');
+grid on;
 
 
 nout = nout2;
