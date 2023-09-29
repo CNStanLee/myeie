@@ -25,11 +25,23 @@ for i = 1 : 1 : sample_size
     time(i) = toc; % save the cal time into the array
 end
 % plot running time vs n
-figure;
+figure("Name", "time vs n");
 plot(n, time);
 title('Fig1 ExecTime to Num(SUM)');
 xlabel('Number n');
 ylabel('Execution Time');
+
+% **** E2E Test for function factorial **%
+
+% compare your own function with matlab version minus == 0
+
+if((CalFactorial(2) - factorial(2)) == 0)
+    e2e_result = "passed";
+else
+    e2e_result = "failed";
+end
+disp(" E2E RESULT IS ");
+disp(e2e_result);
 
 % **** Compute the factorial of 5, 10, 15, 20 **%
 sample_size = 4;
@@ -44,7 +56,7 @@ for i = 1 : 1 : sample_size
 end
 % plot running time(factorial) vs n
 % y = n!
-figure;
+figure("Name", "Fig2 ExecTime to Num(factorial)");
 plot(n, time_of_fac);
 title('Fig2 ExecTime to Num(factorial)');
 xlabel('Number i');
@@ -58,7 +70,7 @@ ErrorRate(0.56);
 % exhaustive approach
 tic;
 for i = 0.1 : 0.1 : 2
-    step_size = 2-i;
+    step_size = 2 - i;
     disp("step_size = " + step_size);
     current_err = ErrorRate(step_size);
     disp("err = " + current_err);
@@ -66,10 +78,10 @@ end
 time1 = toc;   % record time of exhaustive approach
 % adaptive h step method
 for i = 0.1 : 0.1 : 2
-    step_size = 2-i;
+    step_size = 2 - i;
     disp("step_size = " + step_size);
     current_err = ErrorRate(step_size);
-    disp("err=" + current_err);
+    disp("err = " + current_err);
     if(current_err < 5)
       disp("The Critical Step Size has been found as " + step_size);
       disp("Error = " + current_err + "%");
@@ -97,8 +109,9 @@ end
 % Find the factorial of the input positive int n
 function [factorial] = CalFactorial(n)
     % avoid the input is not positive int
-    if((rem(n,1) ~= 0) || (n < 0)) 
-        disp('n must be positive integer')
+    if((rem(n, 1) ~= 0) || (n < 0)) 
+        disp('n must be positive integer');
+        factorial = -1;
         return;
     end
     if (n > 0)
@@ -113,9 +126,9 @@ function [mad_err] = ErrorMAD(h)
     % Init mad err
     mad_err_l = 0;
     % Analy solution
-    [va, ~] = AnalyticSolution(h);
+    [va, ~ ] = AnalyticSolution(h);
     % Nume solution
-    [vn, ~] = NumericalSolution(h);
+    [vn, ~ ] = NumericalSolution(h);
     % Find the mean abs diff
     n = length(va);
     for t = 1 : 1 : (n - 1)
@@ -135,9 +148,9 @@ function [mape_err] = ErrorMAPE(h)
     % Init mad err
     mape_err_l = 0;
     % Analy solution
-    [va, ~] = AnalyticSolution(h);
+    [va, ~ ] = AnalyticSolution(h);
     % Nume solution
-    [vn, ~] = NumericalSolution(h);
+    [vn, ~ ] = NumericalSolution(h);
     % Find the mean abs diff
     n = length(va);
     for t = 2 : 1 : (n - 1)
@@ -159,17 +172,17 @@ end
 % Computation of the error rate
 function [max_err] = ErrorRate(h)
     % Analy solution
-    [va, ~] = AnalyticSolution(h);
+    [va, ~ ] = AnalyticSolution(h);
     % Nume solution
-    [vn, ~] = NumericalSolution(h);
+    [vn, ~ ] = NumericalSolution(h);
     % Find the mean abs diff
     n = length(va);
-    err = zeros(1,n);
+    err = zeros(1, n);
     for i = 1 : n
       if(va(i) == 0)
         err(i) = 0;
       else
-        err(i) = (abs(va(i) - vn(i))./va(i)).*100;    %erro rate
+        err(i) = (abs(va(i) - vn(i)) ./ va(i)) .* 100;    %erro rate
       end
     end
     max_err = max(err);
@@ -189,6 +202,7 @@ function [v, t] = AnalyticSolution(h)
         t = 0 : h : 20.0;
         v = (g * m / c ) * ( 1 - exp ( - c * t / m ));
 end
+
 % Computation of numerical solution
 function [v, t] = NumericalSolution(h)
         t = 0 : h : 20.0;
@@ -200,6 +214,7 @@ function [v, t] = NumericalSolution(h)
             v(i + 1) = v(i) + slope * h;
         end
 end
+
 % differential1
 function [out_slope] = differential1(input_y)
     %Const Def
