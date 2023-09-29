@@ -94,10 +94,10 @@ close all;
     % AddSeq(rand([1 3]),rand([1 3]),rand([1 3]),rand([1 3]));
 
     AddSeq([4,2,6,1],[5,7,6,2],[12,5,6,9],[5,7,6,2]);
-
+%%
 %2.6
 figure
-x = [1, 0, 0, 0, -1, 0, -1];
+x = [1, 0, -1, 0, -1, 0, -1];
 h = [0, 0, 0, 1, 0, 0, 0];
 y = conv(x,h);
 t = -3 : 1 : (length(y) - 4);
@@ -110,7 +110,7 @@ ylabel ('Amplitude');
 legend('x', 'y');
 % y is the fig that x delayed,h will delay the input signal and the result 
 % signal will begin from n = a
-
+%%
 %2.7
 T = readtable("IRL_DLY_RR_2021_grid.csv");
 Tarray = table2array(T);
