@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Mon Oct  2 00:42:59 2023
+# Process ID: 29252
+# Current directory: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_182/ChanghongLi_lab1_182.runs/synth_1
+# Command line: vivado.exe -log lab1_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab1_top.tcl
+# Log file: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_182/ChanghongLi_lab1_182.runs/synth_1/lab1_top.vds
+# Journal file: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_182/ChanghongLi_lab1_182.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source lab1_top.tcl -notrace
