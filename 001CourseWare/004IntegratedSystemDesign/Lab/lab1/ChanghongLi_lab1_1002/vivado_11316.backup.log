@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Oct  2 16:35:13 2023
+# Process ID: 11316
+# Current directory: C:/000mygit/myeie/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_1002
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7508 C:\000mygit\myeie\001CourseWare\004IntegratedSystemDesign\Lab\lab1\ChanghongLi_lab1_1002\ChanghongLi_lab1_1002.xpr
+# Log file: C:/000mygit/myeie/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_1002/vivado.log
+# Journal file: C:/000mygit/myeie/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_1002\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/000mygit/myeie/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_1002/ChanghongLi_lab1_1002.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'C:/000mygit/myeie/001CourseWare/004IntegratedSystemDesign/Lab/lab1/ChanghongLi_lab1_1002'
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2018.3/data/ip'.
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:06 . Memory (MB): peak = 758.594 ; gain = 141.945
+update_compile_order -fileset sources_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct  2 16:52:19 2023...
