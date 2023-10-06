@@ -33,7 +33,7 @@ ylim([-1 1]);
 
 %4.7
 figure;
-delay = 2 * fs;
+delay = 2.514421 * fs;
 delayed_signal = sin(2 * pi  * ( n - delay) * f0 / fs);
 stem(t, delayed_signal);
 xlabel ('TimeIndex n ');
@@ -41,7 +41,7 @@ ylabel ('Amplitude');
 xlim([0 (4*(1/f0))]);
 ylim([-1 1]);
 
-
+%%
 %4.8
 
 fs = 8000;
