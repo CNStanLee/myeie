@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../ChanghongLi_lab1_182.srcs/sources_1/new/Counter.sv" \
+"../../../../ChanghongLi_lab1_182.srcs/sources_1/new/FSM.sv" \
+"../../../../ChanghongLi_lab1_182.srcs/sources_1/imports/001req/debouncer.sv" \
+"../../../../ChanghongLi_lab1_182.srcs/sources_1/new/lab1_top.sv" \
+"../../../../ChanghongLi_lab1_182.srcs/sim_1/new/lab1_top_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

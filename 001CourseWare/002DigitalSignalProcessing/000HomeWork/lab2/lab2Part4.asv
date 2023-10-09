@@ -1,0 +1,18 @@
+%clear
+clear;
+close all;
+%parameter define
+fs = 8000;
+d = 2;
+f0 = 
+
+t = 0 : (1/fs) : (d -(1/fs));
+xt = sin(2 * pi * f0 * t);
+
+plot(t, xt);
+title('sinewave(f0 = 800)');
+xlabel('time t(s)');
+ylabel('Amplitude');
+xlim([0, 0.01]);
+ylim([-1, 1]);
+grid on;

@@ -1,0 +1,14 @@
+%clear
+clear;
+close all;
+
+%parameter define
+
+fs = 8000;
+d = 2;
+
+[y, t] = createNote(d, 53, fs);
+
+sound(y, fs);
+
+
