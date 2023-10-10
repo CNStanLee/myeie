@@ -52,3 +52,57 @@ begin the exit_fail test
 begin the enter_fail test
 0              0              1              0           0           1           1
 *******The Test is done*******
+*******The Test begin*******
+inc_exp   dec_exp   hold_exp  inc       dec       hold      pass
+begin the forward test
+begin the enter test
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+begin the exit test
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+begin the backward test
+begin the reach_low test
+0              0              1              0           0           1           1
+begin the reach_max test
+0              0              1              0           0           1           1
+begin the exit_fail test
+0              0              1              0           0           1           1
+begin the enter_fail test
+0              0              1              0           0           1           1
+*******The Test is done*******
+*******The Test begin*******
+inc_exp   dec_exp   hold_exp  inc       dec       hold      pass
+begin the forward test
+begin the enter test
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+1              0              0              1           0           0           1
+begin the exit test
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+0              1              0              0           1           0           1
+begin the backward test
+begin the reach_low test
+0              0              1              0           0           1           1
+begin the reach_max test
+0              0              1              0           0           1           1
+begin the exit_fail test
+0              0              1              0           0           1           1
+begin the enter_fail test
+0              0              1              0           0           1           1
+*******The Test is done*******

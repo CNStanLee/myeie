@@ -4,16 +4,4 @@ Running: D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto fc5d0c7a96
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.stim_gen
-Compiling module xil_defaultlib.scoreboard
-Compiling module xil_defaultlib.debouncer
-Compiling module xil_defaultlib.FSM
-Compiling module xil_defaultlib.Counter
-Compiling module xil_defaultlib.lab1_top
-Compiling module xil_defaultlib.lab2_top_tb
-WARNING: [XSIM 43-3373] "D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sim_1/new/lab2_top_tb.sv" Line 90. System function $fseek is used as system task. This system function should have a LHS e.g. x=$fseek().
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot lab2_top_tb_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
