@@ -6,16 +6,11 @@
   <File Type="OPT-DCP" Name="lab1_top_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="lab1_top_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="lab1_top_reports.tcl"/>
-  <File Type="OPT-DRC" Name="lab1_top_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="lab1_top.hwdef"/>
+  <File Type="BG-BGN" Name="lab1_top.bgn"/>
   <File Type="PWROPT-DCP" Name="lab1_top_pwropt.dcp"/>
   <File Type="PLACE-DCP" Name="lab1_top_placed.dcp"/>
-  <File Type="PLACE-IO" Name="lab1_top_io_placed.rpt"/>
-  <File Type="PLACE-UTIL" Name="lab1_top_utilization_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="lab1_top_utilization_placed.pb"/>
-  <File Type="PLACE-CTRL" Name="lab1_top_control_sets_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="lab1_top_incremental_reuse_pre_placed.rpt"/>
-  <File Type="BG-BGN" Name="lab1_top.bgn"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="lab1_top_postplace_pwropt.dcp"/>
   <File Type="BG-BIN" Name="lab1_top.bin"/>
   <File Type="PHYSOPT-DCP" Name="lab1_top_physopt.dcp"/>
@@ -23,26 +18,15 @@
   <File Type="ROUTE-ERROR-DCP" Name="lab1_top_routed_error.dcp"/>
   <File Type="ROUTE-DCP" Name="lab1_top_routed.dcp"/>
   <File Type="ROUTE-BLACKBOX-DCP" Name="lab1_top_routed_bb.dcp"/>
-  <File Type="ROUTE-DRC" Name="lab1_top_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-PB" Name="lab1_top_drc_routed.pb"/>
-  <File Type="BITSTR-LTX" Name="lab1_top.ltx"/>
   <File Type="ROUTE-DRC-RPX" Name="lab1_top_drc_routed.rpx"/>
-  <File Type="BITSTR-MMI" Name="lab1_top.mmi"/>
+  <File Type="BITSTR-LTX" Name="lab1_top.ltx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="lab1_top_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="lab1_top_methodology_drc_routed.rpx"/>
-  <File Type="BITSTR-SYSDEF" Name="lab1_top.sysdef"/>
+  <File Type="BITSTR-MMI" Name="lab1_top.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="lab1_top_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-PWR-RPX" Name="lab1_top_power_routed.rpx"/>
-  <File Type="ROUTE-STATUS" Name="lab1_top_route_status.rpt"/>
-  <File Type="ROUTE-STATUS-PB" Name="lab1_top_route_status.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="lab1_top_timing_summary_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="lab1_top.sysdef"/>
   <File Type="ROUTE-TIMING-PB" Name="lab1_top_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMING-RPX" Name="lab1_top_timing_summary_routed.rpx"/>
-  <File Type="RDI-RDI" Name="lab1_top.vdi"/>
   <File Type="ROUTE-CLK" Name="lab1_top_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW" Name="lab1_top_bus_skew_routed.rpt"/>
-  <File Type="ROUTE-BUS-SKEW-PB" Name="lab1_top_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW-RPX" Name="lab1_top_bus_skew_routed.rpx"/>
+  <File Type="RDI-RDI" Name="lab1_top.vdi"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="lab1_top_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="lab1_top_postroute_physopt_bb.dcp"/>
   <File Type="BG-BIT" Name="lab1_top.bit"/>
@@ -50,6 +34,22 @@
   <File Type="BITSTR-NKY" Name="lab1_top.nky"/>
   <File Type="BG-DRC" Name="lab1_top.drc"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="OPT-DRC" Name="lab1_top_drc_opted.rpt"/>
+  <File Type="PLACE-UTIL" Name="lab1_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="lab1_top_utilization_placed.pb"/>
+  <File Type="PLACE-IO" Name="lab1_top_io_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="lab1_top_control_sets_placed.rpt"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="lab1_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="lab1_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="lab1_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="lab1_top_route_status.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="lab1_top_power_routed.rpx"/>
+  <File Type="ROUTE-DRC" Name="lab1_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="lab1_top_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="lab1_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW" Name="lab1_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="lab1_top_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="lab1_top_bus_skew_routed.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/Counter.sv">

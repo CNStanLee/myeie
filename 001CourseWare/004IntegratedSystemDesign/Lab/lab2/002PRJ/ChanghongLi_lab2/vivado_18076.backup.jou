@@ -1,0 +1,221 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Mon Oct  9 16:35:59 2023
+# Process ID: 18076
+# Current directory: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7320 D:\000Mygit\001CourseWare\004IntegratedSystemDesign\Lab\lab2\002PRJ\ChanghongLi_lab2\ChanghongLi_lab2.xpr
+# Log file: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/vivado.log
+# Journal file: D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source lab2_top_tb.tcl
+run 10 ms
+run 10 ms
+run 10 ms
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run 10 ms
+run 10 ms
+run 10 ms
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run 10 ms
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run 10 ms
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run 10 ms
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 79
+run 10 ms
+step
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 79
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 81
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 83
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 95
+restart
+run 10 ms
+step
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 46
+run all
+step
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 46
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 96
+restart
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 98
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 96
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 86
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 99
+restart
+run 2 ms
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 81
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 82
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run 2 ms
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} 88
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} 87
+restart
+run all
+step
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 79
+run all
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 79
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 81
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 84
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 81
+run all
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 99
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 101
+run all
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} -line 87
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} -line 88
+run all
+run all
+step
+step
+step
+step
+step
+step
+step
+step
+run all
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 84
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 101
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+run all
+restart
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} 140
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} 168
+restart
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/stim_gen.sv} 141
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 78
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 78
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 84
+add_bp {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} 101
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+run all
+run all
+run all
+run all
+run all
+step
+step
+step
+step
+step
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+run all
+run all
+run all
+run all
+run all
+step
+step
+step
+step
+step
+run all
+run all
+step
+step
+step
+step
+run all
+step
+run all
+run all
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 84
+remove_bps -file {D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sources_1/new/scoreboard.sv} -line 101
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+close_sim
+launch_simulation
+source lab2_top_tb.tcl
+run all
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top lab1_top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+close_sim

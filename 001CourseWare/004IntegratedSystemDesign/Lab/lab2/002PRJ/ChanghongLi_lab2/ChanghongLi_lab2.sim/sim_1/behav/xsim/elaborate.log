@@ -8,10 +8,10 @@ Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.stim_gen
-Compiling module xil_defaultlib.Counter
 Compiling module xil_defaultlib.scoreboard
 Compiling module xil_defaultlib.debouncer
 Compiling module xil_defaultlib.FSM
+Compiling module xil_defaultlib.Counter
 Compiling module xil_defaultlib.lab1_top
 Compiling module xil_defaultlib.lab2_top_tb
 WARNING: [XSIM 43-3373] "D:/000Mygit/001CourseWare/004IntegratedSystemDesign/Lab/lab2/002PRJ/ChanghongLi_lab2/ChanghongLi_lab2.srcs/sim_1/new/lab2_top_tb.sv" Line 90. System function $fseek is used as system task. This system function should have a LHS e.g. x=$fseek().
