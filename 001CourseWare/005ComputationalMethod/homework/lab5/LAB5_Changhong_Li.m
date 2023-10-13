@@ -35,6 +35,22 @@ load("degradedARSignal.mat");
 interpolateAR(degraded, b, estimateARcoeffs(degraded, 3)');
 
 
+
+
+
+%% assessment
+clear;
+close all;
+% Load data and plot it for sanity
+load referenceARSignal.mat
+figure(1); plot(data); title('AR3 process');
+% Model the data
+model_order = 3;
+coeffs = [-2.3619 2.3263 -0.9409];
+avg = mean(data);
+% Calculate the residual here (note the normalisation)
+res = getResidual(data - avg, coeffs);
+
 % p = 3
 function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
     % calculate the error
@@ -77,6 +93,10 @@ function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
 
 end
 
+
+
+
+
 % function define find the error
 function [residual] = getResidual(data, coeffs)
     % find the order of the model
@@ -85,8 +105,9 @@ function [residual] = getResidual(data, coeffs)
     residual = zeros(n, 1);
     % find the residual of each val in data
     for k = (1 + p) : 1 : n
+        residual(k) = data(k);
         for j = 1 : 1 : p
-            residual(k) = data(k) - coeffs(j) * data(k - p);
+            residual(k) = residual(k) - coeffs(j) * data(k - j);
         end
     end
     residual = residual((p + 1):end, :);
@@ -131,3 +152,4 @@ function [coeffs, avg] = estimateARcoeffs(data, model_order)
     coeffs = -coeffs;
  
 end
+
