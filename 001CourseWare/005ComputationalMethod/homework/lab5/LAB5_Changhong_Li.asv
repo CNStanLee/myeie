@@ -54,19 +54,13 @@ res = getResidual(data - avg, coeffs);
 % p = 3
 function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
     % calculate the error
-    % m_residual = getResidual(datablock, coeffs);
-    
+    m_residual = getResidual(datablock, coeffs);
 
-
-    p = length(coeffs);     % order of the algo 
-    n = length(datablock);  % num of the datablock data
-    % 2023 10 13
-    % change destination error to 0, not using getresidual
-
-    m_residual = zeros(length(datablock) - p);
+    % 
 
     % find A with coeffs
-
+    p = length(coeffs);     % order of the algo 
+    n = length(datablock);  % num of the datablock data
     A = zeros(n - p, n);    % e = Ay
     % 1 coff
     coeffs_b = [-1, coeffs]';
@@ -103,24 +97,24 @@ function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
 end
 
 % function define find the error
-%function [residual] = getResidual(data, coeffs)
-%    % find the order of the model
-%    p = length(coeffs);
-%    n = length(data);
-%    residual = zeros(n, 1);
-%    % find the residual of each val in data
-%    for k = (1 + p) : 1 : n
-%        residual(k) = data(k);
-%        for j = 1 : 1 : p
-%            residual(k) = residual(k) - coeffs(j) * data(k - j);
-%        end
-%    end
-%    residual = residual((p + 1):end, :);
-%end
-
 function [residual] = getResidual(data, coeffs)
-    coeffs = [1, coeffs];
-    residual = conv(coeffs, data);
+    % find the order of the model
+    p = length(coeffs);
+    n = length(data);
+    residual = zeros(n, 1);
+    % find the residual of each val in data
+    for k = (1 + p) : 1 : n
+        residual(k) = data(k);
+        for j = 1 : 1 : p
+            residual(k) = residual(k) - coeffs(j) * data(k - j);
+        end
+    end
+    residual = residual((p + 1):end, :);
+
+
+% Conv version
+
+
 end
 
 % function define esitimateARcoeffs
