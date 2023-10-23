@@ -78,7 +78,39 @@ ylabel('|filtered X(f)|')    % label for y
 sgtitle("Figure 2 Filtered Signal");
 
 %sound(x, Fs);
-sound(filtered_x , Fs);
+%sound(filtered_x , Fs);
+audiowrite('full_pre_filter.wav', filtered_x, Fs);
 
+% Part5 implement with the quantised high-pass filter
 
+HD = HPFQ2;
+filtered_x = double(filter(HD, x));
 
+figure(Name="Figure 3 Final Filtered Signal(HPFQ)");
+
+subplot(2,1,1);
+tsetp = 1/Fs;
+t = 0 : tsetp : tsetp * (length(filtered_x) - 1); 
+plot(t, filtered_x);
+title('Filtered x(t)') % title of the figure
+xlabel('t(s)') % label for x
+ylabel('Amplitude')    % label for y
+
+% Plot to find out which frequency to remove from signal
+subplot(2,1,2);
+nfft = 2^10;        % point num of fft
+filtered_X = fft(filtered_x, nfft);   % fast fourier transform
+fstep = Fs/nfft;    % step size of the Frequency in figure
+fvec = fstep * (0 : nfft/2-1); % x of the figure range from 0 to nfft/2 -1
+
+fresp = 2*abs(filtered_X (1:nfft/2));     % take 1/2 abs val of X
+plot(fvec,fresp)                % plot the figure 
+title('Single-Sided Amplitude Spectrum of Filtered x(t)') % title of the figure
+xlabel('Frequency (Hz)') % label for x
+ylabel('|filtered X(f)|')    % label for y
+
+sgtitle("Figure 3 Final Filtered Signal(HPFQ)");
+
+%sound(x, Fs);
+%sound(filtered_x , Fs);
+audiowrite('final_filter.wav', filtered_x, Fs);

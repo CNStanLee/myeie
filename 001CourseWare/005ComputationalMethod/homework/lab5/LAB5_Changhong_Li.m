@@ -51,28 +51,36 @@ avg = mean(data);
 % Calculate the residual here (note the normalisation)
 res = getResidual(data - avg, coeffs);
 
+
+load degradedARSignal.mat
+coeffs = [-2.3619, 2.3263, -0.9409];
+s = 500 : 550;
+block = degraded(s);
+detected_missing = b(s);
+[restored2, Ak2, Au2, ik2] = interpolateAR(block, detected_missing, coeffs);
+
 % p = 3
 function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
     % calculate the error
     % m_residual = getResidual(datablock, coeffs);
     
-
-
+    
+    coeffs = [1 coeffs];    % 20231023 add 1 before coff
     p = length(coeffs);     % order of the algo 
     n = length(datablock);  % num of the datablock data
     % 2023 10 13
     % change destination error to 0, not using getresidual
 
-    m_residual = zeros(length(datablock) - p);
+    m_residual = zeros(length(datablock) - p + 1, 1);
 
     % find A with coeffs
 
     A = zeros(n - p, n);    % e = Ay
     % 1 coff
-    coeffs_b = [-1, coeffs]';
-    for i = 1 : 1 : (n - p)
-        for j = 1 : 1 : (p + 1)
-            A(i ,j + i - 1) = - coeffs_b(p - j + 2);
+
+    for i = 1 : 1 : (n - p + 1)
+        for j = 1 : 1 : p
+            A(i ,j + i - 1) = coeffs(p - j + 1);
         end
     end
 
@@ -82,11 +90,13 @@ function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
     % ****bonus***
     % by using this formula , we can get y without split A
 
-      restored = ((A' * A)^(-1)) * A' * m_residual;
-    %  restored = A' * A;
-    %  restored = (restored)^(-1);
-    %  restored = restored * A';
-    %  restored = restored * m_residual;
+    %  restored = ((A' * A)^(-1)) * A' * m_residual;
+    %  restored_t = A' * A;
+    %  restored_t = (restored_t)^(-1);
+    %  restored_t = restored_t * A';
+    %  restored_t = restored_t * m_residual;
+
+
 
     % Cal Ak & Au
     % detection = 1 => missing data
@@ -94,12 +104,17 @@ function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
     Au_c0 = A .* detection;
     Ak_c0 = A .* (~detection);
     yk_c0 = datablock .* (~detection');
+
     % clear zero col
     % all means check if each col is all zero col
     Au = Au_c0( : , ~(all(Au_c0 == 0, 1)));
     Ak = Ak_c0( : , ~(all(Ak_c0 == 0, 1)));
     yk = yk_c0( ~(all(yk_c0 == 0, 2)) , : );
+    yu = ((Au' * Au))^(-1) * Au' * (m_residual - Ak * yk);
+    yk = yk - mean(yk);
 
+    restored = datablock;
+    restored(find(detection)) = yu;
 end
 
 % function define find the error

@@ -1,0 +1,9 @@
+\begin{thebibliography}{1}
+
+\bibitem{boykov_2001}
+{\sc Boykov, Y., Veksler, O., and Zabih, R.}
+\newblock Fast approximate energy minimization via graph cuts.
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence
+  23}, 11 (Nov 2001), 1222--1239.
+
+\end{thebibliography}
