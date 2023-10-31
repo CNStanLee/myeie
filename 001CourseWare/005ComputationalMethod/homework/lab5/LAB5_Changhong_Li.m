@@ -51,7 +51,7 @@ avg = mean(data);
 % Calculate the residual here (note the normalisation)
 res = getResidual(data - avg, coeffs);
 
-
+%%
 load degradedARSignal.mat
 coeffs = [-2.3619, 2.3263, -0.9409];
 s = 500 : 550;
@@ -83,20 +83,6 @@ function [restored, Ak, Au, yk] = interpolateAR(datablock, detection, coeffs)
             A(i ,j + i - 1) = coeffs(p - j + 1);
         end
     end
-
-    % e = Ay
-    % A'e = A'Ay
-    % y = (A'A)^(-1)A'e
-    % ****bonus***
-    % by using this formula , we can get y without split A
-
-    %  restored = ((A' * A)^(-1)) * A' * m_residual;
-    %  restored_t = A' * A;
-    %  restored_t = (restored_t)^(-1);
-    %  restored_t = restored_t * A';
-    %  restored_t = restored_t * m_residual;
-
-
 
     % Cal Ak & Au
     % detection = 1 => missing data
@@ -134,7 +120,7 @@ end
 %end
 
 function [residual] = getResidual(data, coeffs)
-    coeffs = [1, coeffs];
+    coeffs = [1; coeffs];
     residual = conv(coeffs, data);
 end
 
