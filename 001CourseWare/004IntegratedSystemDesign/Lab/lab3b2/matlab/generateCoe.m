@@ -1,2 +1,2 @@
-HD = HPF3B;
+HD = bandpass1;
 coewrite(HD);

@@ -34,7 +34,7 @@ title('Single-Sided Amplitude Spectrum of x(t)') % title of the figure
 xlabel('Frequency (Hz)') % label for x
 ylabel('|X(f)|')    % label for y
 
-sgtitle("Figure 1 Original Signal");
+%sgtitle("Figure 1 Original Signal");
 
 % Part 2 find max val of the spectrum
 %
@@ -50,7 +50,8 @@ fprintf("Xf_max_f = %.4f \r\n", Xf_max_f); % disp val of f
 
 % Part5 implement with the quantised high-pass filter
 
-HD = HPF3B;
+%HD = HPF3B;
+HD = bandpass1;
 filtered_x = double(filter(HD, x));
 
 figure(Name="Figure 3 Final Filtered Signal(HPFQ)");
@@ -76,7 +77,7 @@ title('Single-Sided Amplitude Spectrum of Filtered x(t)') % title of the figure
 xlabel('Frequency (Hz)') % label for x
 ylabel('|filtered X(f)|')    % label for y
 
-sgtitle("Figure 2 Final Filtered Signal(HPFQ)");
+%sgtitle("Figure 2 Final Filtered Signal(HPFQ)");
 
 %sound(x, Fs);
 sound(filtered_x , Fs);
