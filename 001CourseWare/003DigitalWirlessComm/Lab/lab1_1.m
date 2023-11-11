@@ -7,8 +7,8 @@ clc;
 % --------------------------------- %
 % parameter define
 % --------------------------------- %
-N = 100;            % Number of modulated symbols
-M = 4;             % Order of modulation
+N = 500;              % Number of modulated symbols
+M = 64;               % Order of modulation
 nbit = log2(M) * N;   % transfer bits
 % --------------------------------- %
 % input information
@@ -26,7 +26,8 @@ title("figure of modulator");
 % --------------------------------- %
 % channel
 % --------------------------------- %
-EbNo_dB = 2;   % the BER will not be 0 anymore when EbNo is less than 5
+% the BER will not be 0 anymore when EbNo is less than 5
+EbNo_dB = 15;   % Energy per bit to noise power spectral density
 snr_db = EbNo_dB + 10*log10(log2(M));
 y = awgn(x, snr_db);
 %figure;
@@ -42,10 +43,13 @@ data_demod = data_Matrix_demod(:);
 % calculate BER
 % --------------------------------- %
 ber = mean(xor(data_bits, data_demod(:)));
-fprintf("The BER of this model = %f", ber);
+err_num = sum(xor(data_bits, data_demod(:)));
+fprintf("The BER of this model = %f\r", ber);
+fprintf("The errorneuous = %f\r", err_num);
 
 figure;
 plot(real(y), imag(y), 'ob'); hold on
 plot(real(x), imag(x), '*')
 title("Compare");
 
+%%
