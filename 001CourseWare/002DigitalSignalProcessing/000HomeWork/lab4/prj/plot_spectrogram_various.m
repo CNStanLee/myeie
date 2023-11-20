@@ -1,9 +1,14 @@
 % Load the audio file
-file_path = 'piano-C5.wav';
+file_path = 'violin-C5.wav';
 [y, fs] = audioread(file_path);
+
+% first 40ms
+
+y = y(1 : 0.08 * fs, 1);
 
 % Set parameters for the spectrogram
 desired_window_duration = 0.04; % 40 ms
+
 window_length = 2^nextpow2(round(desired_window_duration * fs)); % Round up to the nearest power of two
 overlap = round(window_length / 2); % Set the overlap to be half the window length
 nfft = window_length; % Number of FFT points, equal to window length for no zero-padding
@@ -22,7 +27,8 @@ set(gcf, 'color', 'w');
 % Add labels and title
 xlabel('Time (seconds)');
 ylabel('Frequency (Hz)');
-title('Spectrogram of Piano Note');
+title('Spectrogram of Violin Note');
+
 
 % Add a colorbar to show intensity
 colorbar;

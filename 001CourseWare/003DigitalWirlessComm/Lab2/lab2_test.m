@@ -10,13 +10,14 @@ clc;
 
 % Parameter Define
 
-M = 16;                  % Model Order 4QAM M = 4
-sub_carrier_num = 32;   % Number of subcarrier
-symbol_num = 6;         % Number of symbols in each subcarrier
-SNR_dB = 100;              % Eb/N0
-Bw = 1e6;
+M = 16;                   % Model Order 4QAM M = 4
+sub_carrier_num = 64;     % Number of subcarrier
+symbol_num = 6;           % Number of symbols in each subcarrier
+SNR_dB = 30;              % Eb/N0
+%Bw = 1e6;
+Bw = 37/50 * 1e6;
 h = generateChannel(Bw);
-BER = simulateOFDM(M, sub_carrier_num, symbol_num, SNR_dB, 1);
+BER = simulateOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h);
 
 %%
 
