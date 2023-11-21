@@ -55,8 +55,8 @@ clc;
 close all;
 
 M = 4;
-snr_db_arr = [15, 20, 25, 30];
-iter_time = 10000;
+snr_db_arr = [15, 20, 25, 30, 35, 40];
+iter_time = 1000;
 
 BER_arr = zeros(iter_time, length(snr_db_arr));
 BER_mean_arr = zeros(1, length(snr_db_arr));
