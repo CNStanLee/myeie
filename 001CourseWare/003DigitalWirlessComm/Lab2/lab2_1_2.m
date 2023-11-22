@@ -9,10 +9,10 @@ close all;
 % --------------------------------- %
 testh = 1; % ideal channel
 M = 4;
-snr_db_arr = 0 : 2 : 20;
-iter_time = 1000;
+snr_db_arr = 0 : 1 : 20;
+iter_time = 500;
 sub_carrier_num = 64;     % Number of subcarrier
-symbol_num = 6;           % Number of symbols in each subcarrier
+symbol_num = 100;           % Number of symbols in each subcarrier
 % --------------------------------- %
 % 4-QAM AWGN channel
 % --------------------------------- %
@@ -21,7 +21,7 @@ BER_mean_arr = zeros(1, length(snr_db_arr));
 
 for i = 1 : 1 : length(snr_db_arr)
     for j = 1 : 1 : iter_time
-        BER_arr(j, i) = testChannel(snr_db_arr(i) , M, 0, testh);
+        BER_arr(j, i) = testChannel(snr_db_arr(i) , M, 0, testh, symbol_num * sub_carrier_num);
     end
     BER_mean_arr(i) = mean(BER_arr(:, i)); 
 end

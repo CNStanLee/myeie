@@ -1,4 +1,4 @@
-function h = generateChannel(Bw)
+function h = generateChannel(Bw, NomialOrShort)
 
     % Generate Wireless Channel
     
@@ -18,6 +18,7 @@ function h = generateChannel(Bw)
         -7.1 -10.7 -11.1 -5.1 -6.8 -8.7 -13.2 -13.9 -13.9 ...
         -15.8 -17.1 -16 -15.7 -21.6 -22.8];% Power of each delay
     
+    if()
     Ds = 100e-9;                     % nominal delay spread as per standard
     delay_actual = delay_norm * Ds;  % actual delay 
     maxdelay = delay_actual(end);    % max delay as per standard

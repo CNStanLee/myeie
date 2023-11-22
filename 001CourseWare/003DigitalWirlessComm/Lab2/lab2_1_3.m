@@ -10,13 +10,11 @@ close all;
 testh = 1; % ideal channel
 M = 4;
 snr_db_arr = 0 : 2 : 20;
-<<<<<<< HEAD
-iter_time = 3000;
-=======
-iter_time = 100;
->>>>>>> 69a7c06ebb712827005b86ab10f4f7506b3c54c8
+
+iter_time = 1000;
+
 sub_carrier_num = 64;     % Number of subcarrier
-symbol_num = 6;           % Number of symbols in each subcarrier
+symbol_num = 100;           % Number of symbols in each subcarrier
 
 cp_arr = 0 : 0.1 : 0.5;
 
@@ -49,7 +47,7 @@ for k = 1 : 1 : length(cp_arr)
     grid on;    
 end
 
-legend('0', '0.10', '0.20', '0.30', '0.40', '0.50');
+legend('0', '0.1', '0.2', '0.3', '0.4', '0.5');
 
 
 

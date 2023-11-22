@@ -1,9 +1,10 @@
-function [BER] = testChannel(snr_db, M, plot_enable, h)
+function [BER] = testChannel(snr_db, M, plot_enable, h, N)
     % --------------------------------- %
     % parameter define
     % --------------------------------- %
     
-    N = 64 * 6;
+    %N = 64 * 6;
+    %N = 500;
     % --------------------------------- %
     % utilize the generated channel
     % --------------------------------- %

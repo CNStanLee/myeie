@@ -7,8 +7,8 @@ clc;
 % --------------------------------- %
 % parameter define
 % --------------------------------- %
-N = 500;              % Number of modulated symbols
-M = 64;               % Order of modulation
+N = 8;              % Number of modulated symbols
+M =16;               % Order of modulation
 nbit = log2(M) * N;   % transfer bits
 % --------------------------------- %
 % input information
@@ -27,7 +27,7 @@ title("figure of modulator");
 % channel
 % --------------------------------- %
 % the BER will not be 0 anymore when EbNo is less than 5
-EbNo_dB = 15;   % Energy per bit to noise power spectral density
+EbNo_dB = 5;   % Energy per bit to noise power spectral density
 snr_db = EbNo_dB + 10*log10(log2(M));
 y = awgn(x, snr_db);
 %figure;
