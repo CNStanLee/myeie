@@ -10,7 +10,11 @@ close all;
 testh = 1; % ideal channel
 M = 4;
 snr_db_arr = 0 : 2 : 20;
+<<<<<<< HEAD
 iter_time = 3000;
+=======
+iter_time = 100;
+>>>>>>> 69a7c06ebb712827005b86ab10f4f7506b3c54c8
 sub_carrier_num = 64;     % Number of subcarrier
 symbol_num = 6;           % Number of symbols in each subcarrier
 
