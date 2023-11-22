@@ -9,6 +9,7 @@ close all;
 % --------------------------------- %
 
 T = readtable ('ptbdb_normal.csv') ;
+
 Tarray = table2array ( T ) ;
 normalPatient = Tarray (6 ,1: end) ;
 
@@ -51,8 +52,8 @@ nfft = window_length; % Number of FFT points, equal to window length for no zero
 
 
 % Create the spectrogram
-[S, F, T] = spectrogram(normalPatient, window_length, overlap, nfft, fs);
-
+%[S, F, T] = spectrogram(normalPatient, window_length, overlap, nfft, fs);
+[S, F, T] = spectrogram(normalPatient);
 figure;
 
 % Plot the spectrogram in grayscale with white background
@@ -83,7 +84,8 @@ nfft = window_length; % Number of FFT points, equal to window length for no zero
 
 
 % Create the spectrogram
-[S, F, T] = spectrogram(abnormalPatient, window_length, overlap, nfft, fs);
+%[S, F, T] = spectrogram(abnormalPatient, window_length, overlap, nfft, fs);
+[S, F, T] = spectrogram(abnormalPatient);
 
 figure;
 
