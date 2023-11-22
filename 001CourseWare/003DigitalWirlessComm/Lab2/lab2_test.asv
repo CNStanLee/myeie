@@ -1,32 +1,32 @@
-% --------------------------------- %
-% Lab2 Exercise 1
-% --------------------------------- %
-clear;
-close all;
-clc;
-% --------------------------------- %
-% Lab2 Exercise 1
-% --------------------------------- %
-
-% Parameter Define
-
-M = 4;                   % Model Order 4QAM M = 4
-sub_carrier_num = 64;     % Number of subcarrier
-symbol_num = 6;           % Number of symbols in each subcarrier
-SNR_dB = 30;              % Eb/N0
-%Bw = 1e6;
-Bw = 39/50 * 1e6;
-h = generateChannel(Bw);
-%BER = simulateOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h);
-BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, 1);
-
-%% Exercise 1.1
-
-subcarrierSpacing = Bw / sub_carrier_num;
-fprintf("subcarrierSpacing = %.2f kHz\n", subcarrierSpacing / 1000);
-
-dur_of_OFDM_symbol = sub_carrier_num / Bw;
-fprintf("dur_of_OFDM_symbol = %.2f us\n", dur_of_OFDM_symbol * 1e6);
+%% --------------------------------- %
+%% Lab2 Exercise 1
+%% --------------------------------- %
+%clear;
+%close all;
+%clc;
+%% --------------------------------- %
+%% Lab2 Exercise 1
+%% --------------------------------- %
+%
+%% Parameter Define
+%
+%M = 4;                   % Model Order 4QAM M = 4
+%sub_carrier_num = 64;     % Number of subcarrier
+%symbol_num = 6;           % Number of symbols in each subcarrier
+%SNR_dB = 30;              % Eb/N0
+%%Bw = 1e6;
+%Bw = 39/50 * 1e6;
+%h = generateChannel(Bw);
+%%BER = simulateOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h);
+%BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, 1);
+%
+%%% Exercise 1.1
+%
+%subcarrierSpacing = Bw / sub_carrier_num;
+%fprintf("subcarrierSpacing = %.2f kHz\n", subcarrierSpacing / 1000);
+%
+%dur_of_OFDM_symbol = sub_carrier_num / Bw;
+%fprintf("dur_of_OFDM_symbol = %.2f us\n", dur_of_OFDM_symbol * 1e6);
 
 %% Exercise 1.2 Compare with 4-QAM BER in AWGN channel
 clear;
@@ -39,11 +39,11 @@ close all;
 Bw = 1e6;
 h = generateChannel(Bw);
 
-testh = 1;
-%testh = h;
+%testh = 1;
+testh = h;
 
 M = 4;
-snr_db_arr = [-10,-5, 0, 5, 10, 15, 20];
+snr_db_arr = [0:5:30];
 iter_time = 1000;
 
 BER_arr = zeros(iter_time, length(snr_db_arr));
@@ -169,7 +169,7 @@ function BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h)
     % IFFT
     
     %x_ifft = (1 / sqrt(sub_carrier_num)) * dftmtx(sub_carrier_num) * x   ;
-    s =  (1 / sqrt(sub_carrier_num)) * ifft(x, sub_carrier_num);
+    s =  sqrt(sub_carrier_num)* ifft(x, sub_carrier_num);
     
     % Cyclic Prefix
     
@@ -201,7 +201,8 @@ function BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h)
     % AWGN channel
     
     sch_awgn = awgn(sch_wl, SNR_dB);
-    
+    %sch_awgn = awgn(stx_serial, SNR_dB);
+%     sch_awgn = stx_serial;
     % --------------------------------- %
     % Receiver
     % --------------------------------- %
@@ -216,12 +217,12 @@ function BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h)
     
     % FFT
     
-    s_recv = sqrt(sub_carrier_num) * fft(srx_nocp, sub_carrier_num);
+    s_recv =  (1 / sqrt(sub_carrier_num)) *fft(srx_nocp, sub_carrier_num);
     
     % Equalization
     
-    s_recv_eq = s_recv / h;
-    
+     s_recv_eq = s_recv / h;
+    %s_recv_eq = s_recv;
     % Demodulation
     
     dataSymbols_demod = qamdemod(s_recv_eq, M, 'UnitAveragePower', true);
