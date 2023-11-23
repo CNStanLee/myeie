@@ -1,13 +1,14 @@
 % Load the audio file
+%file_path = 'piano-C5.wav';
+%file_path = 'flute-C5.wav';
+%file_path = 'trumpet-C5.wav';
 file_path = 'violin-C5.wav';
 [y, fs] = audioread(file_path);
 
-% first 40ms
-
-y = y(1 : 0.08 * fs, 1);
 
 % Set parameters for the spectrogram
-desired_window_duration = 0.04; % 40 ms
+%desired_window_duration = 0.04; % 40 ms
+desired_window_duration = 1.4; % full note
 
 window_length = 2^nextpow2(round(desired_window_duration * fs)); % Round up to the nearest power of two
 overlap = round(window_length / 2); % Set the overlap to be half the window length
@@ -27,7 +28,7 @@ set(gcf, 'color', 'w');
 % Add labels and title
 xlabel('Time (seconds)');
 ylabel('Frequency (Hz)');
-title('Spectrogram of Violin Note');
+title('Spectrogram of Violin Full Note');
 
 
 % Add a colorbar to show intensity

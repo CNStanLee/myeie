@@ -18,8 +18,12 @@ function h = generateChannel(Bw, NomialOrShort)
         -7.1 -10.7 -11.1 -5.1 -6.8 -8.7 -13.2 -13.9 -13.9 ...
         -15.8 -17.1 -16 -15.7 -21.6 -22.8];% Power of each delay
     
-    if()
-    Ds = 100e-9;                     % nominal delay spread as per standard
+    if(NomialOrShort == 1)
+        Ds = 100e-9;                     % nominal delay spread as per standard
+    else
+        Ds = 30e-9;
+    end
+    
     delay_actual = delay_norm * Ds;  % actual delay 
     maxdelay = delay_actual(end);    % max delay as per standard
     newdelays = (0 : Ts : maxdelay); % delays according to sampling rate

@@ -7,7 +7,8 @@ close all;
 % --------------------------------- %
 % parameter define
 % --------------------------------- %
-Bw = 6e6;           % bandwidth
+%Bw = 6e6;           % bandwidth
+Bw =  37/50 * 1e6;
 Ts = 1/Bw;
 
 % sampling period

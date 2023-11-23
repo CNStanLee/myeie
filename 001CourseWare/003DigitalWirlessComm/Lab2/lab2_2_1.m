@@ -14,7 +14,7 @@ iter_time = 1000;
 sub_carrier_num = 64;     % Number of subcarrier
 symbol_num = 100;           % Number of symbols in each subcarrier
 Bw = 39/50 * 1e6;
-h = generateChannel(Bw);
+h = generateChannel(Bw, 1);
 testh = h; % TDLC channel
 % --------------------------------- %
 % 4-QAM AWGN channel
@@ -24,7 +24,7 @@ BER_mean_arr = zeros(1, length(snr_db_arr));
 
 for i = 1 : 1 : length(snr_db_arr)
     for j = 1 : 1 : iter_time
-        BER_arr(j, i) = testChannel(snr_db_arr(i) , M, 0, 1, symbol_num * sub_carrier_num);
+        BER_arr(j, i) = testChannel(snr_db_arr(i) , M, 0, testh, symbol_num * sub_carrier_num);
     end
     BER_mean_arr(i) = mean(BER_arr(:, i)); 
 end
