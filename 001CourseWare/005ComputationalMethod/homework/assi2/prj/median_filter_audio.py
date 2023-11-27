@@ -5,6 +5,7 @@ from scipy.io import wavfile
 import matplotlib.pyplot as plt
 import os
 from tqdm import tqdm
+from scipy.interpolate import CubicSpline
 
 def read_data(clean_file, deg_file, det_file):
     """read audio data from files
@@ -71,7 +72,7 @@ def plot_input_fig(t, clean_data, deg_data, bk_data, res_data):
 
 def data_prepare():
     # read audio data from the files
-    clean_data, deg_data, fs, t = read_data()
+    clean_data, deg_data = read_data()
     # find real residual of the signal
     real_residual = abs(clean_data - deg_data)
     bk = (real_residual > 0.1).astype(int) 
@@ -125,7 +126,7 @@ def find_best_mse_median():
     det_len = sum(det_data)
     
     res_data = median_filter(deg_data, det_data, 5, out_file)
-    # plot_input_fig(t, clean_data, deg_data, det_data, res_data)
+    plot_input_fig(t, clean_data, deg_data, det_data, res_data)
     print("MSE = ", cal_mse(res_data, clean_data, det_len))
     
     # find best mse using median filter
@@ -138,8 +139,52 @@ def find_best_mse_median():
         mse_arr.append(c_mse)
     print(mse_arr)
     
+def cubic_spline_filter(deg_data, det_data, filter_len, out_file):
+        
+    # judge filter length is not odd
+    if(filter_len % 2 == 0):
+        return -1
+    # judge filter length is 1
+    if(filter_len  == 1):
+        return deg_data
+    
+    # copy for result data
+    res_data = np.array(deg_data)
+    
+    # find the bk point
+    for i in tqdm(range(len(deg_data))):
+        # judge if the detection is 1 means need interpolation
+        if(det_data[i]):
+            # error point detected, interpolation needed
+            # find median array: filter_len / 2
+            begin_addr = i - filter_len // 2
+            end_addr = i + filter_len // 2
+            
+            # get data addr array
+            addr_range = np.arange(begin_addr, end_addr + 1)
+            # get data array
+            spline_arr = np.array([])
+            for j in range(begin_addr, end_addr + 1):
+                if j < 0 : 
+                    spline_arr = np.append(spline_arr, 0)
+                else:
+                    spline_arr = np.append(spline_arr, deg_data[j])
+            
+            # remove noise point
+            addr_range = np.delete(addr_range, (filter_len - 1) // 2)
+            spline_arr = np.delete(spline_arr, (filter_len - 1) // 2)        
+            
+            # utilize spline
+            cs = CubicSpline(addr_range, spline_arr)
+            
+            addr_range_new = np.linspace(begin_addr, end_addr, 501)
+            spline_arr_new = cs(addr_range_new)
+        
+            res_data[i] = spline_arr_new[250]
+    
+    return res_data   
 
-if __name__ == '__main__':
+def find_best_mse_spline():
     script_dir = os.path.dirname(os.path.abspath(__file__))
     deg_file = os.path.join(script_dir, "res", "degraded.wav")
     det_file = os.path.join(script_dir, "bk.npy")
@@ -150,19 +195,22 @@ if __name__ == '__main__':
     data_len = len(clean_data)
     det_len = sum(det_data)
     
-    res_data = median_filter(deg_data, det_data, 5, out_file)
-    # plot_input_fig(t, clean_data, deg_data, det_data, res_data)
+    res_data = cubic_spline_filter(deg_data, det_data, 81, out_file)
     print("MSE = ", cal_mse(res_data, clean_data, det_len))
-    
+    plot_input_fig(t, clean_data, deg_data, det_data, res_data)
     # find best mse using median filter
     mse_arr = []
-    for i in [1, 3, 5, 7, 9]:
-        res_data = median_filter(deg_data, det_data, i, out_file)
+    for i in range(1, 100, 2):
+        res_data = cubic_spline_filter(deg_data, det_data, i, out_file)
         # plot_input_fig(t, clean_data, deg_data, det_data, res_data)
         c_mse = cal_mse(res_data, clean_data, det_len)
         print("size = ", i, "MSE = ", c_mse)
         mse_arr.append(c_mse)
     print(mse_arr)
+
+if __name__ == '__main__':
+    find_best_mse_median()
+    find_best_mse_spline()
     
     
     
