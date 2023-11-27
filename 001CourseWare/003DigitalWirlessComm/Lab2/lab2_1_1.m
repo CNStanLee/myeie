@@ -57,3 +57,8 @@ len = length(pow_prof);
 
 figure;
 stem(newdelays, pow_prof);
+
+Ds2 = 30e-9;
+
+disp(max(delay_norm) * Ds) 
+disp(max(delay_norm) * Ds2) 

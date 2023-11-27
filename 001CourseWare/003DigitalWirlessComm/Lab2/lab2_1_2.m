@@ -12,7 +12,7 @@ M = 4;
 snr_db_arr = 0 : 1 : 20;
 iter_time = 100;
 sub_carrier_num = 64;       % Number of subcarrier
-symbol_num = 100;           % Number of symbols in each subcarrier
+symbol_num = 10;           % Number of symbols in each subcarrier
 % --------------------------------- %
 % 4-QAM AWGN channel
 % --------------------------------- %

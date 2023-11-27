@@ -29,9 +29,9 @@ function BER = testOFDM(M, sub_carrier_num, symbol_num, SNR_dB, h, Cpcoe)
     
     Ncp = round(Cpcoe * length(dataSymbols));
 
-    %Bw = 37/50 * 1e6;
-    %dur_of_Cp = Ncp / Bw;
-    %fprintf("dur_of_Cp = %.2f us\n", dur_of_Cp * 1e6);
+    Bw = 37/50 * 1e6;
+    dur_of_Cp = Ncp / Bw;
+    fprintf("dur_of_Cp = %.2f us\n", dur_of_Cp * 1e6);
 
     I = eye(sub_carrier_num);
     I_last = I((end - Ncp + 1) : end ,:);
