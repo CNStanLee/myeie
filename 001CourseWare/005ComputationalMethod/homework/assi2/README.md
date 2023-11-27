@@ -1,6 +1,6 @@
-# Add here a title for the project
+# Assignment II Audio Restoration using Python
 
-## High-level Description of the project
+## Main Task
 This assignment builds on Assignment I. We assume that we have successfully detected the clicks and we are applying different interpolation methods to restore the audio, such as
 - median filtering
 - cubic splines
@@ -9,18 +9,15 @@ This assignment builds on Assignment I. We assume that we have successfully dete
 
 ## Installation and Execution
 
-Provide details on the Python version and libraries (e.g. numpy version) you are using. One easy way to do it is to do that automatically:
+The project is built with python 3.11.5 and the requirements are listed in the requirements.txt. Use the command below to install the requirments you need.
+
 ```sh                                 
-pip3 install pipreqs
-
-pipreqs $project/path/requirements.txt
+pip install -r requirements.txt
 ```
-For more details check [here](https://github.com/bndr/pipreqs)
-
 
 Afer installing all required packages you can run the demo file simply by typing:
 ```sh
-python demo_audio_restoration.py
+python prj/filter_test.py 
 ```
 ---
 
