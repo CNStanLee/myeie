@@ -278,10 +278,5 @@ title("DFT of Y HLP");
 y_hlp = my_FFTinv(Y_HLP);
 sound(abs(y_hlp), fs);
 
-%% 1.3
-clear;
-close all;
-clc;
-
 
 
