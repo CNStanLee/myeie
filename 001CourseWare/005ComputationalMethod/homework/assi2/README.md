@@ -41,6 +41,12 @@ The restored waveform <output_medianFilter.wav> with the optimal filter length =
 
 <img src="MedianFilter_Result.png" width="350">
 
+For the comparation, the related signal waveform are listed below:
+
+<img src="clean_deg.png" width="350">
+
+<img src="Det_Res.png" width="350">
+
 2. Using the cubic splines, different lengths were explored to test the effectiveness of the restoration. In particular, odd number from 1 - 29 filter length were tested and length = 21 was observed to deliver the lowest MSE = 0.00113, as shown in the figure below.
 
 <img src="SplineFilter_MSEvsLength.png" width="350">
@@ -55,9 +61,19 @@ The runtime of median(3) is 0.071 and time of spline(21) is 0.105
 After listening to the two restored files, we notice that the filter has fix the audio, the filter actually works.
 
 ---
+## Conclusions
+
+|  Method       | Median  | Spline  |
+|  ----         | ----    | ----    |
+| MSE           | 0.00414 | 0.00113 |
+| Best Length   | 3       |  21     |
+| Run time      | 0.071   | 0.105   |
+
+---
 ## Credits
 
 This code was developed for purely academic purposes by CNStanLee as part of the module Computational Method. 
+Changhong Li
 
 
 

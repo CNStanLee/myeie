@@ -44,29 +44,32 @@ def plot_input_fig(t, clean_data, deg_data, bk_data, res_data):
         bk_data : real detection data
     """
     plt.figure(figsize=(4, 10))
-    # figsize=(4, 20)
-    plt.subplot(4, 1, 1)
+
+    plt.subplot(2, 1, 1)
     plt.plot(t, clean_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Amplitude")
     plt.title("Clean data")
     plt.ylim(-1, 1)
 
-    plt.subplot(4, 1, 2)
+    plt.subplot(2, 1, 2)
     plt.plot(t, deg_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Amplitude")
     plt.title("Degraded data")
     plt.ylim(-1, 1)
 
-    plt.subplot(4, 1, 3)
+    plt.show()
+
+    plt.figure(figsize=(4, 10))
+    plt.subplot(2, 1, 1)
     plt.plot(t, bk_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Bk")
     plt.title("Bk data")
     plt.ylim(0, 1)
 
-    plt.subplot(4, 1, 4)
+    plt.subplot(2, 1, 2)
     plt.plot(t, res_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Res")

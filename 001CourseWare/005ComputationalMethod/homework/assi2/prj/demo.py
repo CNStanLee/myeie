@@ -10,6 +10,9 @@ from spline_fil import find_best_mse_spline
 from spline_fil import save_demo_spline
 from scipy.io import wavfile
 import time
+# from playsound import playsound
+# import simpleaudio as sa
+import sounddevice as sd
 
 
 if __name__ == '__main__':
@@ -48,5 +51,20 @@ if __name__ == '__main__':
     plt.ylabel("Amplitude")
     plt.title("Spline Result data")
     plt.show()
+
     # demostrate play combined signal
-    
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    cub_wav = os.path.join(script_dir, "output_cubicSplines.wav")
+    deg_wav = os.path.join(script_dir, "res", "degraded.wav")
+
+    fs_cub_wav, cub_wav_data = wavfile.read(cub_wav)
+    cub_wav_data = np.array(cub_wav_data / 2**15)
+
+    fs_deg_wav, deg_wav_data = wavfile.read(deg_wav)
+    deg_wav_data = np.array(deg_wav_data / 2**15)
+
+    #outwav = np.empty(shape=(0,))
+    outwav = np.append(deg_wav_data[0 : 40959], cub_wav_data[40960 : 81919])
+
+    sd.play(outwav, 8192)
+    time.sleep(12)
