@@ -3,6 +3,7 @@ from scipy.io import wavfile
 import numpy as np
 import wave
 
+
 def read_data(clean_file, deg_file, det_file):
     """Read data from the voice file and adjust its size
 
@@ -17,7 +18,7 @@ def read_data(clean_file, deg_file, det_file):
         det_data: detection data array
         fs: sampling frequency
         t: time axis of the voice data
-    
+
     """
     fs_clean, clean_data = wavfile.read(clean_file)
     fs_deg, deg_data = wavfile.read(deg_file)
@@ -27,10 +28,11 @@ def read_data(clean_file, deg_file, det_file):
     deg_data = deg_data / 2**15
     t = np.arange(0, len(clean_data)) / fs_clean
     fs = fs_clean
-    
+
     det_data = np.load(det_file)
 
     return clean_data, deg_data, det_data, fs, t
+
 
 def plot_input_fig(t, clean_data, deg_data, bk_data, res_data):
     """ plot figure of the input data
@@ -43,28 +45,28 @@ def plot_input_fig(t, clean_data, deg_data, bk_data, res_data):
     """
     plt.figure(figsize=(4, 10))
     # figsize=(4, 20)
-    plt.subplot(4,1,1)
+    plt.subplot(4, 1, 1)
     plt.plot(t, clean_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Amplitude")
     plt.title("Clean data")
     plt.ylim(-1, 1)
 
-    plt.subplot(4,1,2)
+    plt.subplot(4, 1, 2)
     plt.plot(t, deg_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Amplitude")
     plt.title("Degraded data")
     plt.ylim(-1, 1)
-    
-    plt.subplot(4,1,3)
+
+    plt.subplot(4, 1, 3)
     plt.plot(t, bk_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Bk")
     plt.title("Bk data")
     plt.ylim(0, 1)
-    
-    plt.subplot(4,1,4)
+
+    plt.subplot(4, 1, 4)
     plt.plot(t, res_data)
     plt.xlabel("Time (s)")
     plt.ylabel("Res")
@@ -73,6 +75,7 @@ def plot_input_fig(t, clean_data, deg_data, bk_data, res_data):
 
     plt.show()
 
+
 def data_prepare():
     """ Used for generate detection data file
     """
@@ -80,15 +83,16 @@ def data_prepare():
     clean_data, deg_data = read_data()
     # find real residual of the signal
     real_residual = abs(clean_data - deg_data)
-    bk = (real_residual > 0.1).astype(int) 
+    bk = (real_residual > 0.1).astype(int)
     # plot figure of the data
     # plot_input_fig(t, clean_data, deg_data, bk)
     # save bk data to file
     np.save("bk.npy", bk)
-    
+
+
 def cal_mse(res_data, clean_data, det_len):
     """calculate the mse between original data and restored data
-    
+
     Args:
         res_data (1Darray): restored data after process
         clean_data (1Darray): original clean data
@@ -99,10 +103,11 @@ def cal_mse(res_data, clean_data, det_len):
     """
     return np.sum((res_data - clean_data) ** 2) / det_len
 
+
 def save_wav(filename, data, sample_rate):
     """
     Save array to wav file 
-    
+
     Parameters:
     - filename: name of the wavfile
     - data: audio data array

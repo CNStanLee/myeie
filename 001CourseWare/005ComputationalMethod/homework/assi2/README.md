@@ -49,10 +49,10 @@ The restored waveform <output_cubicSplines.wav> with the optimal filter length =
 
 <img src="SplineFilter_Result.png" width="350">
 
-3. Comparing the two different interpolation methods, we notice that method Splines achieves a lower MSE. The runtime of XX method is .....
+3. Comparing the two different interpolation methods, we notice that method Splines achieves a lower MSE.  
+The runtime of median(3) is 0.071 and time of spline(21) is 0.105
 
-After listening to the two restored files, we notice ...
-
+After listening to the two restored files, we notice that the filter has fix the audio, the filter actually works.
 
 ---
 ## Credits
