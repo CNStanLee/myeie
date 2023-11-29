@@ -1,4 +1,5 @@
-matplotlib==3.8.1
-numpy==1.26.1
-scipy==1.11.2
-tqdm==4.66.0
+matplotlib==3.8.2
+numpy==1.26.2
+scipy==1.11.4
+sounddevice==0.4.6
+tqdm==4.66.1

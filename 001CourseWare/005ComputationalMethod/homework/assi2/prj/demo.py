@@ -67,4 +67,4 @@ if __name__ == '__main__':
     outwav = np.append(deg_wav_data[0 : 40959], cub_wav_data[40960 : 81919])
 
     sd.play(outwav, 8192)
-    time.sleep(12)
+    time.sleep(10)
