@@ -1,5 +1,8 @@
 # Assignment II Audio Restoration using Python
-
+Github link 
+```sh   
+https://github.com/CNStanLee/myeie/tree/b021bfd73ac1f2430937db4bef3c44a54ef2d99d/001CourseWare/005ComputationalMethod/homework/assi2
+```
 ## Main Task
 This assignment builds on Assignment I. We assume that we have successfully detected the clicks and we are applying different interpolation methods to restore the audio, such as
 - median filtering
