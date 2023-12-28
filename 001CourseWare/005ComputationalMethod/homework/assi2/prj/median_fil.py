@@ -19,7 +19,7 @@ def median_filter(deg_data, det_data, filter_len, out_file):
     Returns:
         res_data: the restored data after processing
     """
-    # judege filter length is not odd
+    # judge filter length is not odd
     if (filter_len % 2 == 0):
         return -1
 

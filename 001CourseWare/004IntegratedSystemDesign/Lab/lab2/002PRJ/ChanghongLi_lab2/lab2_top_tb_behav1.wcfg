@@ -3,69 +3,29 @@
    <wave_state>
    </wave_state>
    <db_ref_list>
-      <db_ref path="lab2_top_tb_behav.wdb" id="1">
+      <db_ref path="div8_behav.wdb" id="1">
          <top_modules>
+            <top_module name="div8" />
             <top_module name="glbl" />
-            <top_module name="lab2_top_tb" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="42555686666666fs"></ZoomStartTime>
-      <ZoomEndTime time="72848862666667fs"></ZoomEndTime>
-      <Cursor1Time time="67800000000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1010000001fs"></ZoomEndTime>
+      <Cursor1Time time="151848000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="182"></NameColumnWidth>
-      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+      <ValueColumnWidth column_width="68"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="12" />
-   <wvobject fp_name="/lab2_top_tb/log_file" type="array">
-      <obj_property name="ElementShortName">log_file[31:0]</obj_property>
-      <obj_property name="ObjectShortName">log_file[31:0]</obj_property>
+   <WVObjectSize size="2" />
+   <wvobject fp_name="/div8/sysclk" type="logic">
+      <obj_property name="ElementShortName">sysclk</obj_property>
+      <obj_property name="ObjectShortName">sysclk</obj_property>
    </wvobject>
-   <wvobject fp_name="/lab2_top_tb/clk" type="logic">
-      <obj_property name="ElementShortName">clk</obj_property>
-      <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/reset" type="logic">
-      <obj_property name="ElementShortName">reset</obj_property>
-      <obj_property name="ObjectShortName">reset</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/a" type="logic">
-      <obj_property name="ElementShortName">a</obj_property>
-      <obj_property name="ObjectShortName">a</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/b" type="logic">
-      <obj_property name="ElementShortName">b</obj_property>
-      <obj_property name="ObjectShortName">b</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/inc_exp" type="logic">
-      <obj_property name="ElementShortName">inc_exp</obj_property>
-      <obj_property name="ObjectShortName">inc_exp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/dec_exp" type="logic">
-      <obj_property name="ElementShortName">dec_exp</obj_property>
-      <obj_property name="ObjectShortName">dec_exp</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/count" type="array">
-      <obj_property name="ElementShortName">count[3:0]</obj_property>
-      <obj_property name="ObjectShortName">count[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/btn" type="array">
-      <obj_property name="ElementShortName">btn[3:0]</obj_property>
-      <obj_property name="ObjectShortName">btn[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/led" type="array">
-      <obj_property name="ElementShortName">led[3:0]</obj_property>
-      <obj_property name="ObjectShortName">led[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/filtered_a_o" type="logic">
-      <obj_property name="ElementShortName">filtered_a_o</obj_property>
-      <obj_property name="ObjectShortName">filtered_a_o</obj_property>
-   </wvobject>
-   <wvobject fp_name="/lab2_top_tb/filtered_b_o" type="logic">
-      <obj_property name="ElementShortName">filtered_b_o</obj_property>
-      <obj_property name="ObjectShortName">filtered_b_o</obj_property>
+   <wvobject fp_name="/div8/divn" type="logic">
+      <obj_property name="ElementShortName">divn</obj_property>
+      <obj_property name="ObjectShortName">divn</obj_property>
    </wvobject>
 </wave_config>

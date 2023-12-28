@@ -54,9 +54,6 @@ After listening to the two restored files, we notice ...
 
 This code was developed for purely academic purposes by XXXX (add github profile name) as part of the module ..... 
 
-Resources:
-- XXXX
-- XXX
 
 
 
