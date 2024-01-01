@@ -33,7 +33,15 @@
     <Option Name="DSAVendor" Val="xilinx"/>
     <Option Name="DSABoardId" Val="pynq-z2"/>
     <Option Name="DSANumComputeUnits" Val="60"/>
+<<<<<<< HEAD
     <Option Name="WTXSimLaunchSim" Val="162"/>
+=======
+<<<<<<< HEAD
+    <Option Name="WTXSimLaunchSim" Val="164"/>
+=======
+    <Option Name="WTXSimLaunchSim" Val="156"/>
+>>>>>>> bb1f18b13b9b3882f3503c5f32f8a3be289884ef
+>>>>>>> 157fb42d2bca27c0cf08db73ec84f97db60c5813
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -111,6 +119,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/div8.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="lab1_top"/>
@@ -132,6 +148,27 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
+<<<<<<< HEAD
+      <File Path="$PSRCDIR/sim_1/new/lab2_top_tb.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sim_1/new/debouncer_tb.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../lab1/ChanghongLi_lab1_182/ChanghongLi_lab1_182.srcs/sim_1/new/debouncer_tb.sv"/>
+          <Attr Name="ImportTime" Val="1696259215"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+=======
+>>>>>>> bb1f18b13b9b3882f3503c5f32f8a3be289884ef
       <File Path="$PSRCDIR/sim_1/new/Counter_tb.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../lab1/ChanghongLi_lab1_183/ChanghongLi_lab1_183.srcs/sim_1/new/Counter_tb.sv"/>
@@ -189,7 +226,11 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
+<<<<<<< HEAD
+        <Option Name="TopModule" Val="div8"/>
+=======
         <Option Name="TopModule" Val="exam_tb"/>
+>>>>>>> bb1f18b13b9b3882f3503c5f32f8a3be289884ef
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>

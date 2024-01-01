@@ -9,7 +9,7 @@ clc;
 % Calculate sum of the main diagonal elements in an N x N matrix
 % --------------------------------- %
 fprintf("------test1 sum test------\r");
-x = [1, 2, 3; 4, 5, 6; 7, 8, 9];
+x = [1, 0,2; 0, 1, 0; 0, 0, 1];
 result1 = find_sum_of_diagonal(x);
 fprintf("sum of diagonal is : %d\r", result1);
 %%
@@ -31,6 +31,8 @@ x = my_eye(4);
 result2 = find_sum_of_diagonal(x);
 fprintf("sum of diagonal is : %d\r", result2);
 
+
+%%
 
 % --------------------------------- %
 % Funtion define

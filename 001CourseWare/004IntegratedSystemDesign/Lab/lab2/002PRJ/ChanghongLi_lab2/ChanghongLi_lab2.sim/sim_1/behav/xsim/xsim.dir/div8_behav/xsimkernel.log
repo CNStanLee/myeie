@@ -1,0 +1,4 @@
+Running: xsim.dir/div8_behav/xsimk.exe -simmode gui -wdb div8_behav.wdb -simrunnum 0 -socket 53510
+Design successfully loaded
+Design Loading Memory Usage: 7212 KB (Peak: 7212 KB)
+Design Loading CPU Usage: 15 ms
