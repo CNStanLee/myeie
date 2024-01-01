@@ -23,13 +23,14 @@
 module exam_tb(
     );
     reg clk; 
-    reg [2:0] a;
-    reg signed [2:0] b;
-    reg signed [1:0] c;
-    reg signed [3:0] d1, d2, d3;
+    reg signed [2:0] a;
+    reg        [2:0] b;
+    reg signed [3:0] c;
+    reg signed [5:0] d1, d2, d3;
 
     reg [31:0] count;
     reg [0:0] div2;
+    reg [0:0] div8;
     
     always
     begin
@@ -41,16 +42,17 @@ module exam_tb(
     
     initial
     begin
-        assign a = 3'd2; 
-        assign b = 3'd2;
-        assign c = -2'd1;
+        assign a = 3'd3; 
+        assign b = 3'd4;
+        assign c = -4'sd1;
         
         d1 = a + c;
-        d2 = b[1:0] + c;
-        d3 = $signed(a) + b;
+        d2 = $signed(b) + c[0];
+        d3 = $signed(b) * a;
         
 
-        toggle_div2(10);
+        //toggle_div2(10);
+        test_div8(2);
     end
 
     
@@ -64,6 +66,26 @@ module exam_tb(
              @(posedge clk);
              div2 = ~div2;
           end
+        end
+      endtask
+      
+      task test_div8(input [31:0] N);
+        reg [31:0] cnt1;
+        reg [31:0] cnt2;
+        begin
+            div8 = 0;
+            for(cnt1 = 0;cnt1 < N;cnt1++)begin
+                for(cnt2 = 0;cnt2 < 4'd8;cnt2++)begin
+                    if(cnt2 >= 4'd7)begin
+                        div8 = 1;
+                    end
+                    else begin
+                        div8 = 0;
+                    end
+                     @(posedge clk);
+                end
+              div8 = 0;
+            end
         end
       endtask
     
